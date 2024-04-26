@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2048 Game</title>
+        <link rel="stylesheet" href="2048.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="2048.js"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="nav-container">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="/images/icons-png/logo.png">
+                        <h1>Puzzle Arcadia</h1>
+                    </div>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="play.html">How To Play</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="modal" id="modal">
+            <div class="content">
+                <h4>Game Over!</h4>
+                <p>Your score was: <span class="score"></span></p>
+                <button class="play-again">Play Again!</button>
+            </div>
+        </div>
+        <div class="container">
+            <h1>2048</h1>
+            <hr>
+            <h2>Score: <span id="score">0</span></h2>
+            <div id="board"></div>
+            <div class="direction-buttons">
+                <button id="up-button">↑</button>
+                <div class="direction-row">
+                    <button id="left-button">←</button>
+                    <button id="down-button">↓</button>
+                    <button id="right-button">→</button>
+                </div>
+            </div>
+            <div class="reset">
+                <button id="reset-game">New Game</button>
+            </div>
+        </div>
+        <footer>
+            &copy; 2024 Kelly Phan and 2017 Thomas Baruchel
+        </footer>
+    </body>
+</html>

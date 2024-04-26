@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hangman Game </title>
+    <link rel="stylesheet" href="hangman.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="hangman.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html">
+                <div class="logo">
+                    <img src="/images/icons-png/logo.png" alt="logo">
+                    <h1>Puzzle Arcadia</h1>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="play.html">How To Play</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="modal">
+        <div class="content">
+            <h4> Game Over!</h4>
+            <p> The correct word was: <span class="correct-answer"></span></p>
+            <button class="play-again"> Play Again! </button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1> Hangman </h1>
+        <hr>
+        <div class="hangman-container">
+            <img src="images/icons-svg/hangman-0.svg" alt="hangman-img">
+        </div>
+        <div class="game-container">
+            <ul class="word-display"></ul>
+            <div class="hint">
+                <h4>Hint: <span class="hint-text"></span></h4>
+            </div>
+            <div class="guesses">
+                <h4> Incorrect guesses: <span class="num-incorrect">0 / 6</span> </h4>
+            </div>
+            <div class="keyboard">
+            </div>
+        </div>
+        <div class="reset">
+            <button class="reset-game">New Game</button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Kelly Phan and 2017 Thomas Baruchel
+    </footer>
+</body>
+</html>

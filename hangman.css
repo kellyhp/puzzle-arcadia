@@ -1,0 +1,91 @@
+:root {
+    --grey: #f9f9f9;
+    --blue: #8ec5fc;
+    --background-image: linear-gradient(to right, rgb(203 213 225) 1px, transparent 1px), linear-gradient(to bottom, rgb(203 213 225) 1px, transparent 1px);
+    --background-size: 2.5rem 2.5rem;
+    --font-family: monospace;
+}
+
+h1 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.num-incorrect {
+    color: red;
+}
+
+.hangman-container {
+    margin-top: 2%;
+}
+
+.hangman-container img {
+    max-width: 270px;
+}
+
+.word-display {
+    display: flex;
+    gap: 2%;
+    list-style: none;
+    justify-content: center;
+}
+
+.word-display .letter {
+    width: 28px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2%;
+    border-bottom: 3px solid black;
+}
+
+.word-display .letter.guessed {
+    border-color: transparent;
+    margin: -5% 0 4%;
+}
+
+.game-container {
+    margin-top: 5%;
+}
+
+.game-container h4 {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1%;
+    margin-top: 1%;
+}
+
+.keyboard button {
+    width: calc(100% / 9 - 5px) !important;
+    padding: 2%;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: var(--blue);
+    transition: background-color 0.3s ease;
+}
+
+.keyboard button[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@media(max-width: 782px) {
+    .hangman-box img {
+        max-width: 200px;
+    }
+    .game-box {
+        margin-top: 10%;
+    }
+}
