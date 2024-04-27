@@ -42,10 +42,12 @@ hr {
 
 p, h3, .symbol{
     font-size: 1rem;
+    width: 100%;
 }
 
 .ol li {
     font-size: 1rem;
+    width: 100%;
 }
 
 a {
