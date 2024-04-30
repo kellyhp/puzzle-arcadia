@@ -139,7 +139,15 @@ const resetGame = () => {
     hangmanImg.src = `images/icons-svg/hangman-${wrongGuessCount}.svg`;
     guessesDisplay.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
-    wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"> </li>`).join("");
+    wordDisplay.textContent = '';
+    const characters = currentWord.split("");
+    const fragment = document.createDocumentFragment();
+    characters.forEach(() => {
+        const listItem = document.createElement("li");
+        listItem.classList.add("letter");
+        fragment.appendChild(listItem);
+    });
+    wordDisplay.appendChild(fragment);
     gameModal.classList.remove("appear");
 }
 
@@ -204,9 +212,17 @@ const initGame = (button, clickedLetter) => {
 
 const gameOver = (isDone) => {
     setTimeout(() => {
-        const modalText = isDone ? `You found the word:` : `The correct word was:`;
+        const modalText = isDone ? `You found the word: ` : `The correct word was: `;
         gameModal.querySelector("h4").innerText = `${isDone ? 'Congrats!' : 'Game Over!'}`;
-        gameModal.querySelector("p").innerHTML = `${modalText} <span class="correct-answer"> ${currentWord}</span>`;
+        const paragraph = gameModal.querySelector("p");
+        const textNode = document.createTextNode(modalText);
+        const span = document.createElement("span");
+        span.classList.add("correct-answer");
+        const wordNode = document.createTextNode(currentWord);
+        span.appendChild(wordNode);
+        paragraph.textContent = '';
+        paragraph.appendChild(textNode);
+        paragraph.appendChild(span);
         gameModal.classList.add("appear");
     }, 300)
 }

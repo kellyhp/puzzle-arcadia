@@ -192,11 +192,32 @@ function checkGameOver() {
 function hasMovesLeft() {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
-            const currentTile = board[r][c];
-            if (r + 1 < rows && board[r + 1][c] === currentTile) {
+            if (board[r][c] === 0) {
                 return true;
             }
-            if (c + 1 < columns && board[r][c + 1] === currentTile) {
+            if (r > 0 && board[r - 1][c] === 0) {
+                return true;
+            }
+            if (r < rows - 1 && board[r + 1][c] === 0) {
+                return true;
+            }
+            if (c > 0 && board[r][c - 1] === 0) {
+                return true;
+            }
+            if (c < columns - 1 && board[r][c + 1] === 0) {
+                return true;
+            }
+            const currentTile = board[r][c];
+            if (r > 0 && board[r - 1][c] === currentTile) {
+                return true;
+            }
+            if (r < rows - 1 && board[r + 1][c] === currentTile) {
+                return true;
+            }
+            if (c > 0 && board[r][c - 1] === currentTile) {
+                return true;
+            }
+            if (c < columns - 1 && board[r][c + 1] === currentTile) {
                 return true;
             }
         }
