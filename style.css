@@ -106,7 +106,7 @@ a {
     font-size: 1.15rem;
 }
 
-.correct-answer {
+.correct-answer, .bold {
     font-weight: 600;
 }
 
